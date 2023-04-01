@@ -1,0 +1,20 @@
+name: My test workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+   
+jobs:
+  myfirstjob:
+            name: First Job
+            run_on: ubuntu_latest
+            steps:
+            - name: Step One
+              uses: actions/checkout@v3
+            - name: Step Two
+              run: |
+                touch newFile.yaml
+                echo "Hi! ALll" >> newFile.yaml
+                cat newFile.yaml
+                pwd
